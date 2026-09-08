@@ -3,6 +3,8 @@ import Profile from "./components/Profile";
 import TodoList from "./components/TodoList";
 import Avatar from "./components/Avatar";
 import Login from "./components/Login";
+import Fruits from "./components/Fruits";
+import Users from "./components/User";
 
 function App() {
   return (
@@ -25,6 +27,15 @@ function App() {
       <section>
         <Login />
       </section>
+
+      <section>
+        <Fruits />
+      </section>
+
+      <section>
+        <Users/>
+      </section>
+      
     </>
   );
 }
