@@ -58,28 +58,55 @@ import { useState } from "react";
 
 // export default Login;
 
-function Login() {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+// function Login() {
+//     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    return (
-        <div>
-            {isLoggedIn ? (
-                <>
-                    <h1>Welcome!</h1>
-                    <button onClick={() => setIsLoggedIn(false)}>
-                        Logout
-                    </button>
-                </>
-            ) : (
-                <>
-                    <h1>Please Login</h1>
-                    <button onClick={() => setIsLoggedIn(true)}>
-                        Login
-                    </button>
-                </>
-            )}
-        </div>
-    );
+//     return (
+//         <div>
+//             {isLoggedIn ? (
+//                 <>
+//                     <h1>Welcome!</h1>
+//                     <button onClick={() => setIsLoggedIn(false)}>
+//                         Logout
+//                     </button>
+//                 </>
+//             ) : (
+//                 <>
+//                     <h1>Please Login</h1>
+//                     <button onClick={() => setIsLoggedIn(true)}>
+//                         Login
+//                     </button>
+//                 </>
+//             )}
+//         </div>
+//     );
+// }
+
+// export default Login;
+
+import { useRef } from "react";
+
+function Login() {
+  const usernameRef = useRef(null);
+
+  const handleFocus = () => {
+    usernameRef.current.focus();
+  };
+
+  return (
+    <div>
+      <input
+        ref={usernameRef}
+        type="text"
+        placeholder="Enter username"
+      />
+
+      <button onClick={handleFocus}>
+        Focus Username
+      </button>
+    </div>
+  );
 }
 
 export default Login;
+
