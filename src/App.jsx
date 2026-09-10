@@ -5,6 +5,7 @@ import Avatar from "./components/Avatar";
 import Login from "./components/Login";
 import Fruits from "./components/Fruits";
 import Users from "./components/User";
+import Timer from "./components/Timer";
 
 function App() {
   return (
@@ -33,9 +34,12 @@ function App() {
       </section>
 
       <section>
-        <Users/>
+        <Users />
       </section>
-      
+
+      <section>
+        <Timer />
+      </section>
     </>
   );
 }
