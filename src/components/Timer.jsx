@@ -1,7 +1,5 @@
 // import { useRef, useState } from "react";
 
-import { useEffect, useState } from "react";
-
 // function Timer() {
 //   const timerRef = useRef(null);
 //   const [seconds, setSeconds] = useState(0);
@@ -32,22 +30,71 @@ import { useEffect, useState } from "react";
 // export default Timer;
 
 
+// function Timer() {
+//   const [count, setCount] = useState(0)
+
+//   useEffect(() => {
+//     console.log("Count is", count);
+//   }, [count]);
+
+//   return (
+//     <div>
+//       <h1>{count}</h1>
+
+//       <button onClick={() => setCount(count + 1)}>
+//         Add
+//       </button>
+//     </div>
+//   )
+// }
+
+// export default Timer;
+
+import { useEffect, useState } from "react";
+
 function Timer() {
-  const [count, setCount] = useState(0)
+  const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    console.log("Count is", count);
-  }, [count]);
+    fetch("https://jsonplaceholder.typicode.com/users")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to fetch users");
+        }
+
+        return response.json();
+      })
+      .then((data) => {
+        setUsers(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setError(error.message);
+        setLoading(false);
+      });
+  }, []);
+
+  if (loading) {
+    return <h2>Loading...</h2>;
+  }
+
+  if (error) {
+    return <h2>{error}</h2>;
+  }
 
   return (
     <div>
-      <h1>{count}</h1>
+      <h1>Users</h1>
 
-      <button onClick={() => setCount(count + 1)}>
-        Add
-      </button>
+      {users.map((user) => (
+        <p key={user.id}>
+          {user.name} - {user.email}
+        </p>
+      ))}
     </div>
-  )
+  );
 }
 
 export default Timer;

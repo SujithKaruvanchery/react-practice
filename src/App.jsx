@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Profile from "./components/Profile";
 import TodoList from "./components/TodoList";
 import Avatar from "./components/Avatar";
