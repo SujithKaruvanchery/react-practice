@@ -1,7 +1,7 @@
 // function Login() {
 //     const isLoggedIn = false;
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 
 //     if (isLoggedIn) {
 //         return <h1>Welcome back!</h1>;
@@ -84,29 +84,47 @@ import { useState } from "react";
 
 // export default Login;
 
-import { useRef } from "react";
+// import { useRef } from "react";
+
+// function Login() {
+//   const usernameRef = useRef(null);
+
+//   const handleFocus = () => {
+//     usernameRef.current.focus();
+//   };
+
+//   return (
+//     <div>
+//       <input
+//         ref={usernameRef}
+//         type="text"
+//         placeholder="Enter username"
+//       />
+
+//       <button onClick={handleFocus}>
+//         Focus Username
+//       </button>
+//     </div>
+//   );
+// }
+
+// export default Login;
+
+import React from 'react'
 
 function Login() {
-  const usernameRef = useRef(null);
+  const emailRef = useRef(null)
 
-  const handleFocus = () => {
-    usernameRef.current.focus();
-  };
-
+  function focusEmail() {
+    emailRef.current.focus();
+  }
   return (
     <div>
-      <input
-        ref={usernameRef}
-        type="text"
-        placeholder="Enter username"
-      />
-
-      <button onClick={handleFocus}>
-        Focus Username
-      </button>
+      <input ref={emailRef} />
+      <button onClick={focusEmail}>Focus Email</button>
     </div>
-  );
+  )
 }
 
-export default Login;
+export default Login
 
