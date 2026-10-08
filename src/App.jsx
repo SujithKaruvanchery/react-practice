@@ -1,54 +1,54 @@
-import Profile from "./components/Profile";
-import TodoList from "./components/TodoList";
-import Avatar from "./components/Avatar";
-import Login from "./components/Login";
-import Fruits from "./components/Fruits";
-import Users from "./components/User";
-import Timer from "./components/Timer";
-import Effects from "./components/effects/Effects";
+// import Profile from "./components/Profile";
+// import TodoList from "./components/TodoList";
+// import Avatar from "./components/Avatar";
+// import Login from "./components/Login";
+// import Fruits from "./components/Fruits";
+// import Users from "./components/User";
+// import Timer from "./components/Timer";
+// import Effects from "./components/effects/Effects";
 
-function App() {
-  return (
-    <>
-      <section>
-        <h1>Amazing scientists</h1>
-        <Profile />
-        <Profile />
-        <Profile />
-      </section>
+// function App() {
+//   return (
+//     <>
+//       <section>
+//         <h1>Amazing scientists</h1>
+//         <Profile />
+//         <Profile />
+//         <Profile />
+//       </section>
 
-      <section>
-        <TodoList />
-      </section>
+//       <section>
+//         <TodoList />
+//       </section>
 
-      <section>
-        <Avatar />
-      </section>
+//       <section>
+//         <Avatar />
+//       </section>
 
-      <section>
-        <Login />
-      </section>
+//       <section>
+//         <Login />
+//       </section>
 
-      <section>
-        <Fruits />
-      </section>
+//       <section>
+//         <Fruits />
+//       </section>
 
-      <section>
-        <Users />
-      </section>
+//       <section>
+//         <Users />
+//       </section>
 
-      <section>
-        <Timer />
-      </section>
+//       <section>
+//         <Timer />
+//       </section>
 
-      <section>
-        <Effects />
-      </section>
-    </>
-  );
-}
+//       <section>
+//         <Effects />
+//       </section>
+//     </>
+//   );
+// }
 
-export default App;
+// export default App;
 
 
 // import React, { useState } from 'react'
@@ -65,3 +65,44 @@ export default App;
 // }
 
 // export default App
+
+// import { useMemo, useState } from "react";
+
+// function App() {
+//   const [number, setNumber] = useState(10);
+//   const [count, setCount] = useState(0);
+
+//   const square = useMemo(() => {
+//     return number * number;
+//   }, [number]);
+
+//   return (
+//     <div>
+//       <h1>Square: {square}</h1>
+
+//       <button onClick={() => setNumber(number + 1)}>
+//         Change Number
+//       </button>
+
+//       <button onClick={() => setCount(count + 1)}>
+//         Count: {count}
+//       </button>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+import React from 'react'
+import ComponentsA from './components/ComponentsA';
+import "./index.css";
+
+function App() {
+  return (
+    <div>
+      <ComponentsA />
+    </div>
+  )
+}
+
+export default App;
