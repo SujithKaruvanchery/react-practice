@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
+import React, { createContext, useState } from 'react'
 import ComponentsB from './ComponentsB'
+
+export const UserContext = createContext()
 
 function ComponentsA() {
 
@@ -8,7 +10,9 @@ function ComponentsA() {
         <div className='box'>
             <h1>ComponentsA</h1>
             <h2>{`Hello ${user}`}</h2>
-            <ComponentsB user={user}/>
+            <UserContext.Provider value={user}>
+                <ComponentsB user={user} />
+            </UserContext.Provider>
         </div>
     )
 }

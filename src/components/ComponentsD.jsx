@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { UserContext } from './ComponentsA'
 
-function ComponentsD(props) {
-  return (
-    <div className='box'>
-        <h1>ComponentsD</h1>
-        <h2>{`Bye ${props.user}`}</h2>
-    </div>
-  )
+function ComponentsD() {
+
+    const user = useContext(UserContext)
+    return (
+        <div className='box'>
+            <h1>ComponentsD</h1>
+            <h2>{`Bye ${user}`}</h2>
+        </div>
+    )
 }
 
 export default ComponentsD
