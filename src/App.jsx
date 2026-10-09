@@ -94,13 +94,13 @@
 // export default App;
 
 import React from 'react'
-import ComponentsA from './components/ComponentsA';
 import "./index.css";
+import MyComponent from './components/MyComponent';
 
 function App() {
   return (
     <div>
-      <ComponentsA />
+      <MyComponent />
     </div>
   )
 }
