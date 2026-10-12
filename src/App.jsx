@@ -94,13 +94,12 @@
 // export default App;
 
 import React from 'react'
-import "./index.css";
-import MyComponent from './components/MyComponent';
+import UseReducer from './components/UseReducer';
 
 function App() {
   return (
     <div>
-      <MyComponent />
+      <UseReducer />
     </div>
   )
 }
