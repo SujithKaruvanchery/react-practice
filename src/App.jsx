@@ -93,13 +93,13 @@
 
 // export default App;
 
-import React from 'react'
-import UseReducer from './components/UseReducer';
+import React from 'react';
+import Counter1 from './components/Counter1';
 
 function App() {
   return (
     <div>
-      <UseReducer />
+      <Counter1 />
     </div>
   )
 }
